@@ -1,5 +1,7 @@
 # h2b - HTML to Bricks Builder Converter
 
+(Claude AI Skill)
+
 **Version 3.1.1** | 99.5%+ Native Coverage | Flat Structure Architecture
 
 Convert HTML, CSS, and JavaScript to Bricks Builder paste-ready JSON format with complete property support and native interactions.
