@@ -1,0 +1,91 @@
+{
+  "content": [
+    {
+      "id": "hero-section",
+      "name": "section",
+      "parent": 0,
+      "children": ["hero-container"],
+      "settings": {
+        "_height": "100vh",
+        "_display": "flex",
+        "_alignItems": "center",
+        "_justifyContent": "center",
+        "_background": {"color": {"hex": "#1a1a2e"}},
+        "_padding": {"top": "60", "right": "20", "bottom": "60", "left": "20"}
+      },
+      "label": "Hero Section"
+    },
+    {
+      "id": "hero-container",
+      "name": "container",
+      "parent": "hero-section",
+      "children": ["hero-title", "hero-subtitle", "hero-cta"],
+      "settings": {
+        "_width": "100%",
+        "_maxWidth": "800",
+        "_display": "flex",
+        "_direction": "column",
+        "_alignItems": "center",
+        "_gap": "32"
+      },
+      "label": "Container"
+    },
+    {
+      "id": "hero-title",
+      "name": "heading",
+      "parent": "hero-container",
+      "children": [],
+      "settings": {
+        "tag": "h1",
+        "text": "Welcome to Our Platform",
+        "_typography": {
+          "font-size": "56",
+          "font-weight": "700",
+          "color": {"hex": "#ffffff"},
+          "text-align": "center",
+          "line-height": "1.2"
+        }
+      },
+      "label": "Hero Title"
+    },
+    {
+      "id": "hero-subtitle",
+      "name": "text-basic",
+      "parent": "hero-container",
+      "children": [],
+      "settings": {
+        "text": "Build amazing websites with Bricks Builder",
+        "_typography": {
+          "font-size": "20",
+          "color": {"hex": "#cccccc"},
+          "text-align": "center",
+          "line-height": "1.6"
+        }
+      },
+      "label": "Subtitle"
+    },
+    {
+      "id": "hero-cta",
+      "name": "button",
+      "parent": "hero-container",
+      "children": [],
+      "settings": {
+        "text": "Get Started",
+        "_padding": {"top": "16", "right": "32", "bottom": "16", "left": "32"},
+        "_background": {"color": {"hex": "#0066cc"}},
+        "_border": {"radius": {"top": "8", "right": "8", "bottom": "8", "left": "8"}},
+        "_typography": {"font-size": "18", "font-weight": "600", "color": {"hex": "#ffffff"}},
+        "_cssTransition": "all 0.3s ease",
+        "_background:hover": {"color": {"hex": "#0052a3"}},
+        "_transform:hover": {"translateY": "-2"},
+        "_boxShadow:hover": [{"offsetX": "0", "offsetY": "8", "blur": "16", "spread": "0", "color": {"hex": "#000000", "opacity": 0.2}}]
+      },
+      "label": "CTA Button"
+    }
+  ],
+  "source": "bricksCopiedElements",
+  "sourceUrl": "https://github.com/iamfilipp/html2bricks",
+  "version": "1.12.4",
+  "globalClasses": [],
+  "globalElements": []
+}
