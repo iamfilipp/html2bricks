@@ -1,67 +1,55 @@
-# Changelog
+# h2b Changelog
 
-All notable changes to h2b will be documented in this file.
+## Version 3.2.0 (2024-12-29)
 
-## [3.1.1] - 2024-12-26
+### Critical Bug Fixes
 
-### Added
-- Complete Grid system (10 properties): `_gridAutoColumns`, `_gridAutoRows`, `_gridAutoFlow`, `_justifyItemsGrid`, `_alignItemsGrid`, `_justifyContentGrid`, `_alignContentGrid`
-- Complete Flexbox items (5 properties): `_flexGrow`, `_flexShrink`, `_flexBasis`, `_alignSelf`, `_order`
-- Gap properties with units: `_columnGap`, `_rowGap` (accept string values with units like "30px")
-- Tag property for all elements (not just headings): Override HTML tag output
-- Display modes: `inline`, `inline-flex`, `inline-grid`
+**Property Naming Convention Fixed (BREAKING if you relied on wrong names):**
+- ❌ OLD (WRONG): `_minHeight`, `_maxHeight`, `_minWidth`, `_maxWidth`
+- ✅ NEW (CORRECT): `_heightMin`, `_heightMax`, `_widthMin`, `_widthMax`
+- **Impact:** All sizing properties now output correctly to Bricks
+- **Pattern:** `_[property][Min/Max]` NOT `_[min/max][Property]`
+- **File Updated:** `references/BRICKS-NATIVE-PROPERTIES.md`
 
-### Fixed
-- BRICKS-ELEMENTS.md now documents tag property for structure elements
-- BRICKS-NATIVE-PROPERTIES.md complete with all grid/flex properties
-- Gap property documentation clarifies units vs numbers
+### New Guidance
 
-### Documentation
-- Updated examples with complete property usage
-- Added tag property usage examples
-- Clarified difference between `_gap` (number) and `_columnGap`/`_rowGap` (string with units)
+**Classes and IDs:**
+- Clarified `_cssClasses` is a space-separated STRING, not an array
+- Example: `"_cssClasses": "class1 class2"` NOT `["class1", "class2"]`
+- Documented that BOTH `_cssClasses` AND `_cssId` should be used
+- `_cssClasses` → For reusable CSS selectors (`.my-class`)
+- `_cssId` → For unique HTML IDs (`#my-element`)
 
----
+**Custom CSS Property Removed:**
+- Removed `_cssCustom` guidance - this property does NOT output to frontend
+- All custom CSS must go in external CSS files
+- Use ID or class selectors to target elements from external CSS
 
-## [3.1.0] - 2024-12-26
+**Element Selection:**
+- Added guidance on when to use `text` vs `heading` element
+- Use `heading` for plain text only
+- Use `text` element for rich HTML with styled `<span>` elements
 
-### Added - FLAT STRUCTURE (CRITICAL)
-- **Flat structure with ID-based relationships** - All elements are siblings in content array
-- Required fields on every element: `id`, `name`, `parent`, `children`, `settings`, `label`
-- 31 Bricks elements reference (BRICKS-ELEMENTS.md)
-- Pseudo-selector support for ALL properties (`:hover`, `:focus`, `:nth-child`, etc.)
-- Native interactions system reference
-- JavaScript handling strategy (4-tier system)
+### Version Updates
 
-### Coverage
-- 99.5%+ native property coverage
-- External CSS only needed for `::before`, `::after`, complex selectors
+- Updated Bricks version from 1.12.4 to 2.1.4
+- Updated skill version from 3.1.0 to 3.2.0
 
-### Breaking Changes
-- Structure must be FLAT, not nested
-- All elements require `id`, `parent`, `children` fields
-- sourceUrl changed to: `https://github.com/iamfilipp/html2bricks`
+### Documentation Improvements
 
----
+- Added section on zero dimensions causing collapse
+- Clarified external CSS requirements
+- Added more examples showing correct vs incorrect approaches
+- Emphasized property naming pattern throughout
 
-## [3.0.0] - 2024-12
+### Files Changed
 
-### Added
-- Gradients support (`_gradient` object)
-- Interactions system (`_interactions`)
-- Advanced flexbox properties
-- Advanced grid properties
-- 25+ additional native properties
-
-### Coverage
-- 95% native property coverage
+1. `SKILL.md` - Version 3.2.0, added all new guidance
+2. `references/BRICKS-NATIVE-PROPERTIES.md` - Fixed property names, added warnings
+3. `CHANGELOG.md` - This file (NEW)
 
 ---
 
-## [2.3.0] - Initial Release
+## Version 3.1.0 (Previous)
 
-### Added
-- HTML to Bricks JSON conversion
-- Basic CSS property mapping
-- h2b- class prefix system
-- ~60-70% property coverage
+Initial version with flat structure, native property coverage, and comprehensive element support.
